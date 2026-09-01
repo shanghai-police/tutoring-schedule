@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Tutoring Schedule</title>
+<link rel="stylesheet" href="style.css">
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+</head>
+<body>
+<div class="wrap">
+  <h1>Tutoring schedule</h1>
+  <p class="sub">Loading&hellip;</p>
+
+  <nav class="tabs">
+    <button class="tab-btn active" data-tab="default">Default Week</button>
+    <button class="tab-btn" data-tab="week">This Week</button>
+  </nav>
+
+  <section class="block" id="default-block">
+    <div class="block-head">
+      <h2>Default week</h2>
+      <span class="hint">Template &mdash; new weeks copy these rows</span>
+    </div>
+    <div id="default-days"></div>
+  </section>
+
+  <section class="block" id="week-block" style="display:none">
+    <div class="block-head">
+      <h2>This week</h2>
+      <span class="hint" id="week-hint"></span>
+    </div>
+    <div id="week-days"></div>
+    <div class="week-nav">
+      <button id="prev-week">&larr; Previous week</button>
+      <span class="range" id="week-range"></span>
+      <button id="next-week">Next week &rarr;</button>
+    </div>
+  </section>
+
+  <section class="block">
+    <div class="block-head">
+      <h2>Earnings</h2>
+      <span class="hint" id="earnings-hint"></span>
+    </div>
+    <div class="totals">
+      <div class="totals-group">
+        <h3>This week</h3>
+        <div class="totals-row paid"><span class="label">Paid</span><span class="value" id="week-paid">$0.00</span></div>
+        <div class="totals-row unpaid"><span class="label">Unpaid</span><span class="value" id="week-unpaid">$0.00</span></div>
+      </div>
+      <div class="totals-group">
+        <h3 id="month-title">This month</h3>
+        <div class="totals-row paid"><span class="label">Paid</span><span class="value" id="month-paid">$0.00</span></div>
+        <div class="totals-row unpaid"><span class="label">Unpaid</span><span class="value" id="month-unpaid">$0.00</span></div>
+      </div>
+    </div>
+  </section>
+</div>
+
+<script src="config.js"></script>
+<script src="script.js"></script>
+</body>
+</html>
